@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <script src="jquery-3.2.1.js"></script>
+  <title>Jquery partie 4</title>
+</head>
+<body>
+  <form class="" action="index.html" method="post">
+    <input type="text" name="" value="" id="note1" />
+    <input type="text" name="" value="" id="note2" />
+    <input type="text" name="" value="" id="note3" />
+    <input type="text" name="" value="" id="note4" />
+    <input type="text" name="" value="" id="note5" />
+  </form>
+  <button type="button" name="button">calcul de votre moyenne</button>
+  <script>
+  $(function(){
+    $('button').click(function(){
+      var result = $('input').val();
+      var note1 = $('#note1').val();
+      var note2 = $('#note2').val();
+      var note3 = $('#note3').val();
+      var note4 = $('#note4').val();
+      var note5 = $('#note5').val();
+      var average = ((parseInt(note1))+(parseInt(note2))+(parseInt(note3))+(parseInt(note4))+(parseInt(note5)))/5;
+      if(result == ''){
+        alert('Merci de renseigner toutes les notes');
+      }else{
+        if((isNaN(result)==false) && (result >= 0) && (result <= 20)){
+          if((average >= 0) && (average < 10)){
+            alert(average + '/20' +'\nEn dessous de la moyenne');
+          }else if((average >= 10) && (average < 13)){
+            alert(average + '/20' +'\nMoyen');
+          }else if((average >= 13) && (average < 16)){
+            alert(average + '/20' +'\nBien');
+          }else if((average >= 16) && (average < 20)){
+            alert(average + '/20' +'\nTrès bien');
+          }else if(average == 20){
+            alert(average + '/20' +'\nExcellent');
+          }
+        }else{
+          alert('ne saisissez que des chiffres compris entre 0 et 20');
+        }
+      }
+    });
+  });
+</script>
+</body>
+</html>
